@@ -18,12 +18,10 @@ PARAMS = {
 
 
 class Trader:
-    __init__(self, params=None){
+    def __init__(self, params=None):
         if params==None:
             params=PARAMS
-        self.params=PARAMS
-
-    }
+        self.params=params
 
     def run(self, state: TradingState):
         result = {}
@@ -51,7 +49,7 @@ class Trader:
                 while (buy_quantity>0 and z_best_ask<=-2 ):
                     orders.append(Order(ASH,best_bid, buy_quantity ))
                     del order_depth.buy_orders[best_bid]
-                     best_bid = max(order_depth.buy_orders.keys())
+                    best_bid = max(order_depth.buy_orders.keys())
                 
                     z_best_bid= (best_bid-fair_value)/std_dev
                     
