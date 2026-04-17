@@ -77,4 +77,5 @@ class Trader:
                 orders.append(Order(Product.ASH, mm_ask, sell_quantity))
 
             result[Product.ASH] = orders
+            
         return result, 1, ""
